@@ -88,7 +88,15 @@ function App() {
         <ul className="countryList">
           {visibleData.map((country, index) => (
             <li key={index} className="countryCard">
-              <strong>{country.name.common}</strong> - {country.region}
+              <img
+                src={country.flags?.png}
+                alt={`Flag of ${country.name.common}`}
+                className="flag"
+              />
+              <div>
+                <strong>{country.name.common}</strong>
+                <div>{country.region}</div>
+              </div>
             </li>
           ))}
         </ul>
